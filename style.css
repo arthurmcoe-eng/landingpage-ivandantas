@@ -7,6 +7,21 @@
     font-family: 'Poppins', sans-serif;
 }
 
+.img-topo-site{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img-topo-site h3{
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+h3{
+    color: #8B6F47;
+}
+
 body{
     background-color: #D6BFA7;
     height: 100vh;
@@ -336,17 +351,59 @@ button:hover, form .btn-enviar input:hover{
 }
 
 @media screen and (max-width: 1020px){
+
     /* classes gerais */
+
+    .img-topo-site h3{
+    margin-top: 5px;
+    font-size: 16px;
+    }
+
+    header > .interface{
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    header h1{
+        text-align: center;
+        width: 100%;
+    }
+
     .flex{
         flex-direction: column-reverse;
+        text-align: center;
     }
 
     .topo-do-site .flex{
         flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    /* TITULOS CENTRALIZADOS */
+    .topo-do-site h1{
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .txt-topo-site p{
+        text-align: center;
     }
 
     h2.titulo{
         font-size: 28px;
+        text-align: center;
+    }
+
+    .txt-sobre h2{
+        text-align: center;
+    }
+
+    .txt-sobre p{
+        text-align: center;
+    }
+
+    .especialidades-box{
         text-align: center;
     }
 
@@ -360,27 +417,17 @@ button:hover, form .btn-enviar input:hover{
         padding: 20px 8%;
     }
 
-    .topo-do-site h1{
-    font-size: 30px;
-    }
-
     .topo-do-site .img-topo-site img{
         width: 100%;
     }
 
     section.topo-do-site .flex{
-    gap: 40px;
+        gap: 40px;
     }
 
-    /* ESTILOS DAS ESPECIALIDADES */
-    section.especialidades{
-        padding: 40px 8%;
-    }
-    
 
 }
 
 html {
     scroll-behavior: smooth;
 }
-
