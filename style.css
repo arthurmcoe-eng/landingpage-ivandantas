@@ -354,6 +354,22 @@ button:hover, form .btn-enviar input:hover{
 
     /* classes gerais */
 
+    .img-topo-site{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img-topo-site img{
+    width: 80%;
+}
+
+.img-topo-site h3{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 14px;
+}
+
     .img-topo-site h3{
     margin-top: 5px;
     font-size: 16px;
@@ -431,3 +447,4 @@ button:hover, form .btn-enviar input:hover{
 html {
     scroll-behavior: smooth;
 }
+
