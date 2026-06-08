@@ -2,119 +2,881 @@
 <html lang="pt-br">
 <head>
     <!-- Meta Pixel Code -->
-<script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f.fbq)f.fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '2107039870073584'); //
-  fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=2107039870073584&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f.fbq)f.fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '2107039870073584');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=2107039870073584&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-
-    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="icon" type="image/png" href="images/Logo Ivan Souza Dantas Advocacia .png">
     <title>Dr. Ivan Souza Dantas Advocacia</title>
+    <style>
+        /* ========== RESET & VARIÁVEIS ========== */
+        :root {
+            --primary: #8B6F47;
+            --primary-dark: #6b5435;
+            --accent: #C9A27E;
+            --bg-light: #f5efe8;
+            --bg-medium: #e7d7c4;
+            --text-dark: #1e1e1e;
+            --text-medium: #3a3a3a;
+            --white: #ffffff;
+            --glass-bg: rgba(255, 255, 255, 0.15);
+            --glass-border: rgba(255, 255, 255, 0.25);
+            --shadow-sm: 0 4px 20px rgba(0,0,0,0.06);
+            --shadow-md: 0 10px 30px rgba(0,0,0,0.1);
+            --shadow-lg: 0 20px 50px rgba(0,0,0,0.15);
+            --radius: 20px;
+            --transition: 0.3s cubic-bezier(0.25, 0.8, 0.25, 1.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* ========== FUNDO GEOMÉTRICO (CSS PURO) ========== */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background:
+                radial-gradient(circle at 20% 80%, rgba(139,111,71,0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(201,162,126,0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(139,111,71,0.05) 0%, transparent 40%);
+            z-index: -2;
+            animation: bgFloat 20s infinite alternate ease-in-out;
+        }
+
+        @keyframes bgFloat {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            100% { transform: translate(-2%, 1%) rotate(1deg); }
+        }
+
+        /* Formas decorativas */
+        .shape {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.3;
+            pointer-events: none;
+        }
+        .shape1 {
+            width: 500px;
+            height: 500px;
+            background: rgba(201,162,126,0.2);
+            top: -100px;
+            right: -150px;
+        }
+        .shape2 {
+            width: 400px;
+            height: 400px;
+            background: rgba(139,111,71,0.15);
+            bottom: -100px;
+            left: -100px;
+        }
+
+        .interface {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .flex {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        /* ========== HEADER ========== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: var(--transition);
+            background: transparent;
+        }
+
+        header.scrolled {
+            background: rgba(245, 239, 232, 0.85);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            box-shadow: var(--shadow-sm);
+            border-bottom: 1px solid rgba(139,111,71,0.15);
+        }
+
+        header .interface {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 1px;
+            position: relative;
+        }
+
+        .logo h1::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 40%;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 3px;
+        }
+
+        .menu-desktop ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .menu-desktop a {
+            text-decoration: none;
+            color: var(--text-medium);
+            font-weight: 500;
+            position: relative;
+            padding-bottom: 5px;
+            transition: color 0.3s;
+        }
+
+        .menu-desktop a::after {
+            content: '';
+            position: absolute;
+            width: 0%;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .menu-desktop a:hover {
+            color: var(--primary);
+        }
+
+        .menu-desktop a:hover::after {
+            width: 100%;
+        }
+
+        /* Hamburger */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+            z-index: 1100;
+        }
+
+        .hamburger span {
+            width: 28px;
+            height: 3px;
+            background: var(--primary);
+            border-radius: 3px;
+            transition: var(--transition);
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* Menu mobile */
+        .menu-mobile {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 70%;
+            max-width: 350px;
+            height: 100vh;
+            background: rgba(245, 239, 232, 0.98);
+            backdrop-filter: blur(20px);
+            box-shadow: -5px 0 30px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            transition: right 0.4s ease;
+            z-index: 1050;
+        }
+
+        .menu-mobile.active {
+            right: 0;
+        }
+
+        .menu-mobile a {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            text-decoration: none;
+            position: relative;
+        }
+
+        .menu-mobile a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s;
+        }
+        .menu-mobile a:hover::after {
+            width: 100%;
+        }
+
+        /* ========== BOTÕES GERAIS ========== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.8rem 2rem;
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(139,111,71,0.3);
+        }
+
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(139,111,71,0.4);
+        }
+
+        .btn-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            padding: 0;
+            font-size: 1.4rem;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            box-shadow: none;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* ========== HERO ========== */
+        .topo-do-site {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 0 60px;
+            position: relative;
+        }
+
+        .topo-do-site .flex {
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .txt-topo-site {
+            flex: 1 1 500px;
+        }
+
+        .txt-topo-site h1 {
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .txt-topo-site h1 span {
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+        }
+
+        .txt-topo-site h1 span::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: rgba(201,162,126,0.4);
+            border-radius: 4px;
+            z-index: -1;
+        }
+
+        .txt-topo-site p {
+            color: var(--text-medium);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .img-topo-site {
+            flex: 0 0 auto;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .img-topo-site img {
+            max-width: 100%;
+            height: auto;
+            filter: drop-shadow(0 20px 30px rgba(0,0,0,0.15));
+            transition: var(--transition);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        /* OAB agora claramente embaixo, em bloco */
+        .img-topo-site h3 {
+            display: block;
+            margin-top: 20px;
+            font-weight: 600;
+            color: var(--primary);
+            letter-spacing: 2px;
+            background: rgba(139,111,71,0.1);
+            padding: 0.5rem 1.8rem;
+            border-radius: 50px;
+        }
+
+        /* ========== SEÇÕES ========== */
+        section {
+            padding: 5rem 0;
+        }
+
+        .titulo {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            text-align: center;
+            color: var(--text-dark);
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .titulo::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            margin: 0.5rem auto 0;
+            border-radius: 2px;
+        }
+
+        /* Especialidades */
+        .especialidades {
+            background: rgba(255,255,255,0.4);
+            backdrop-filter: blur(5px);
+            position: relative;
+            z-index: 1;
+        }
+
+        .especialidades .flex {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .especialidades-box {
+            background: var(--white);
+            padding: 2.5rem 2rem;
+            border-radius: var(--radius);
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            border: 1px solid rgba(139,111,71,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .especialidades-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .especialidades-box:hover::before {
+            transform: scaleX(1);
+        }
+
+        .especialidades-box:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .especialidades-box i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            background: rgba(139,111,71,0.1);
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .especialidades-box h3 {
+            color: var(--text-dark);
+            margin-bottom: 0.8rem;
+            font-size: 1.4rem;
+        }
+
+        .especialidades-box p {
+            color: var(--text-medium);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        /* Sobre */
+        .sobre .flex {
+            gap: 4rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .img-sobre img {
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-lg);
+            max-width: 100%;
+            height: auto;
+            transition: var(--transition);
+        }
+
+        .img-sobre img:hover {
+            transform: scale(1.02);
+        }
+
+        .txt-sobre {
+            flex: 1 1 400px;
+        }
+
+        .txt-sobre p {
+            color: var(--text-medium);
+            margin: 1.5rem 0;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .btn-social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .btn-social button {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            border: none;
+            background: var(--primary);
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-social button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-5px);
+        }
+
+        /* Formulário */
+        .formulario {
+            background: linear-gradient(135deg, rgba(255,255,255,0.6), rgba(255,255,255,0.3));
+            backdrop-filter: blur(10px);
+            border-radius: var(--radius);
+            margin: 3rem auto;
+            max-width: 700px;
+            padding: 3rem 2rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .titulo-formulario {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        .titulo-formulario h2 {
+            margin-bottom: 0;           /* Remove a margem extra do título */
+        }
+
+        .titulo-formulario h2 {
+            font-size: 1.8rem;
+            color: var(--text-dark);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        form input,
+        form textarea {
+            width: 100%;
+            padding: 1rem 1.2rem;
+            border: 2px solid rgba(139,111,71,0.2);
+            border-radius: 15px;
+            background: var(--white);
+            font-size: 1rem;
+            outline: none;
+            transition: var(--transition);
+            color: var(--text-dark);
+        }
+
+        form input:focus,
+        form textarea:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(139,111,71,0.1);
+        }
+
+        /* Redimensionamento removido e altura fixa */
+        form textarea {
+            resize: none;
+            height: 130px;
+        }
+
+        .btn-enviar input {
+            background: var(--primary);
+            color: white;
+            border: none;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            letter-spacing: 1px;
+            font-size: 1.1rem;
+        }
+
+        .btn-enviar input:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(255,255,255,0.7);
+            backdrop-filter: blur(15px);
+            padding: 2rem 0;
+            border-top: 1px solid rgba(139,111,71,0.2);
+        }
+
+        footer .flex {
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        footer .line-footer {
+            padding: 1rem 0;
+        }
+
+        .borda {
+            border-top: 2px solid var(--primary);
+            margin-top: 1rem;
+            padding-top: 1.5rem;
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            color: var(--text-medium);
+        }
+
+        footer a {
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: var(--primary);
+        }
+
+        /* Botão voltar ao topo */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            box-shadow: var(--shadow-md);
+            z-index: 999;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+
+        /* Animações de entrada */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.appear {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px; /* Compensa o header fixo ao clicar nos links */
+        }
+
+        /* Estilização da barra de rolagem para navegadores Webkit (Chrome, Edge, Safari) */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-light);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, var(--accent), var(--primary));
+            border-radius: 10px;
+            border: 2px solid var(--bg-light);
+            transition: background 0.3s ease;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, var(--primary), var(--primary-dark));
+        }
+
+        /* Para Firefox */
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary) var(--bg-light);
+        }
+
+        /* ========== RESPONSIVO ========== */
+        @media (max-width: 992px) {
+            .hamburger {
+                display: flex;
+            }
+            .menu-desktop {
+                display: none;
+            }
+            .topo-do-site .flex {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+            .txt-topo-site p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .btn-group {
+                justify-content: center;
+            }
+            .img-topo-site img {
+                width: 70%;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .interface {
+                padding: 0 1rem;
+            }
+            .btn {
+                padding: 0.7rem 1.5rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    
-    <header>
+    <!-- Formas decorativas de fundo -->
+    <div class="shape shape1"></div>
+    <div class="shape shape2"></div>
+
+    <header id="header">
         <div class="interface">
-            <div class="logo">
-                <a href="#">
-                    <!-- <img src="images/WhatsApp_Image_2026-03-03_at_08.25.23-removebg-preview.png" alt="Logo Ivan menu bar" width="150px"> -->
-                     <h1></h1>
-                </a>
-            </div><!--logo-->
 
             <nav class="menu-desktop">
                 <ul>
                     <li><a href="#Início">Início</a></li>
                     <li><a href="#Atuação">Atuação</a></li>
                     <li><a href="#Sobre">Sobre</a></li>
-                    <li><a href="#Fale conosco">Fale conosco</a></li>
+                    <li><a href="#Faleconosco">Fale conosco</a></li>
                 </ul>
             </nav>
 
-            <!-- <div class="btn-contato">
-                <a href="https://wa.me/5511968112100" target="_blank">
-                    <button>Contato</button>
-                </a>
-            </div> -->
-        </div><!-- interface --> 
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
     </header>
+
+    <!-- Menu mobile -->
+    <div class="menu-mobile" id="menuMobile">
+        <a href="#Início" class="mobile-link">Início</a>
+        <a href="#Atuação" class="mobile-link">Atuação</a>
+        <a href="#Sobre" class="mobile-link">Sobre</a>
+        <a href="#Faleconosco" class="mobile-link">Fale conosco</a>
+    </div>
 
     <main>
         <section class="topo-do-site" id="Início">
             <div class="interface">
                 <div class="flex">
-                    <div class="txt-topo-site">
-                        <h1>Estratégia, técnica e excelência na defesa dos seus direitos.</h1>
-                        <p>O escritório pauta sua atuação pelos princípios da ética, responsabilidade e comprometimento, dedicando-se à defesa dos interesses de seus clientes com rigor técnico e zelo profissional. Busca, de forma diligente e estratégica, a solução jurídica mais adequada a cada caso concreto, sempre em conformidade com a legislação vigente e com os preceitos que regem o exercício da advocacia.</p>
-
-                        <div class="btn-contato">
-                            <a href="https://wa.me/5511968112100" target="_blank">
-                                <button>Fale conosco</button>
+                    <div class="txt-topo-site fade-in">
+                        <h1>Estratégia, técnica e <span>excelência</span> na defesa dos seus direitos.</h1>
+                        <p>O escritório pauta sua atuação pelos princípios da ética, responsabilidade e comprometimento, dedicando-se à defesa dos interesses de seus clientes com rigor técnico e zelo profissional.</p>
+                        <div class="btn-group">
+                            <a href="https://wa.me/5511968112100" target="_blank" class="btn">
+                                <i class="bi bi-whatsapp"></i> Fale conosco
                             </a>
-                             <a href="https://wa.me/5511968112100" target="_blank"><button><i class="bi bi-whatsapp"></i></button></a>
+                            <a href="#Atuação" class="btn btn-outline">Áreas de atuação</a>
                         </div>
                     </div>
-
-                    <div class="img-topo-site">
-                        <img src="images/Logo Ivan Souza Dantas Advocacia (1).png" alt="imagem flutuante" width="600px">
+                    <div class="img-topo-site fade-in">
+                        <img src="images/Logo Ivan Souza Dantas Advocacia .png" alt="Logo Ivan Souza Dantas" width="500">
                         <h3>OAB/SP 303195</h3>
                     </div>
                 </div>
-            </div><!-- interface -->
-        </section><!--Topo-do-site-->
+            </div>
+        </section>
 
         <section class="especialidades" id="Atuação">
             <div class="interface">
-                <h2 class="titulo">ÁREAS DE ATUAÇÃO:</h2>
+                <h2 class="titulo">ÁREAS DE ATUAÇÃO</h2>
                 <div class="flex">
-                    <div class="especialidades-box">
+                    <div class="especialidades-box fade-in">
                         <i class="bi bi-bank"></i>
-                        <h3 class="subtitulo">Direito Penal</h3>
-                        <p>Atuação na área de Direito Penal, com defesa técnica, estratégica e comprometida com a proteção dos direitos e garantias do cliente em todas as fases do processo.</p>
+                        <h3>Direito Penal</h3>
+                        <p>Defesa técnica, estratégica e comprometida com a proteção dos direitos e garantias do cliente em todas as fases do processo.</p>
                     </div>
-                    <div class="especialidades-box">
+                    <div class="especialidades-box fade-in">
                         <i class="bi bi-bank2"></i>
-                        <h3 class="subtitulo">Direito Civil</h3>
-                        <p>Atuação na área de Direito Civil, com prestação de assessoria e consultoria jurídica na análise e condução de questões envolvendo direitos e obrigações, elaboração e revisão de contratos, responsabilidade civil e demais relações jurídicas entre particulares, com foco na prevenção e solução de conflitos..</p>
+                        <h3>Direito Civil</h3>
+                        <p>Assessoria e consultoria jurídica na análise e condução de questões envolvendo direitos e obrigações, contratos e responsabilidade civil.</p>
                     </div>
-                    <div class="especialidades-box">
+                    <div class="especialidades-box fade-in">
                         <i class="bi bi-person"></i>
-                        <h3 class="subtitulo">Trabalhista e família</h3>
-                        <p>Atuação nas áreas de Direito do Trabalho e Direito de Família, com prestação de assessoria e consultoria jurídica especializada na análise, orientação e condução de demandas relacionadas às relações de trabalho, bem como na resolução de questões familiares, incluindo divórcio, pensão alimentícia, guarda de filhos, regulamentação de visitas e demais conflitos decorrentes das relações familiares.</p>
+                        <h3>Trabalhista e Família</h3>
+                        <p>Orientação especializada em relações de trabalho e direito de família: divórcio, pensão, guarda e regulamentação de visitas.</p>
                     </div>
                 </div>
-
             </div>
         </section>
-        
+
         <section class="sobre" id="Sobre">
             <div class="interface">
                 <div class="flex">
-                    <div class="img-sobre">
-                        <img src="images/imagemdantassobremim.jpeg" alt="imagem sobre mim" width="400px">
+                    <div class="img-sobre fade-in">
+                        <img src="images/imagemdantassobremim.jpeg" alt="Dr. Ivan Souza Dantas" width="400">
                     </div>
-
-                    <div class="txt-sobre">
-                        <!-- <h2>MUITO PRAZER, <span>SOU IVAN SOUZA DANTAS.</span></h2> -->
+                    <div class="txt-sobre fade-in">
                         <p>A atuação profissional é pautada pela responsabilidade, ética e dedicação em cada caso. A prestação de serviços jurídicos exige análise criteriosa dos fatos, atenção aos detalhes e avaliação estratégica das circunstâncias que envolvem cada demanda. O objetivo é oferecer orientação jurídica segura, conduzir os processos com transparência e adotar as medidas legais mais adequadas para a defesa dos interesses apresentados, sempre buscando resultados justos e juridicamente consistentes.</p>
                         <div class="btn-social">
                             <a href="https://wa.me/5511968112100" target="_blank"><button><i class="bi bi-whatsapp"></i></button></a>
@@ -125,24 +887,23 @@
             </div>
         </section>
 
-        <section class="formulario" id="Fale conosco">
+        <section id="Faleconosco">
             <div class="interface">
-                <div class="titulo-formulario">
-                    <h2 class="titulo">CHAME NO WHATSAPP.</h2>
-                    <a href="https://wa.me/5511968112100" target="_blank"><button><i class="bi bi-whatsapp"></i></button></a>
-                </div>
-                <form onsubmit="enviarWhatsApp(); return false;">
-    
-                    <input type="text" id="nome" placeholder="Informe seu nome completo:" required>
-                    <textarea id="mensagem" placeholder="Envie sua mensagem:" required></textarea>
-                    <div class="btn-enviar">
-                        <input type="submit" value="ENVIAR">
-                        
+                <div class="formulario fade-in">
+                    <div class="titulo-formulario">
+                        <h2 class="titulo">FALE PELO WHATSAPP</h2>
+                        <a href="https://wa.me/5511968112100" target="_blank" class="btn btn-icon"><i class="bi bi-whatsapp"></i></a>
                     </div>
-                </form>
+                    <form onsubmit="enviarWhatsApp(); return false;">
+                        <input type="text" id="nome" placeholder="Seu nome completo" required>
+                        <textarea id="mensagem" placeholder="Descreva brevemente seu caso..." required></textarea>
+                        <div class="btn-enviar">
+                            <input type="submit" value="ENVIAR MENSAGEM">
+                        </div>
+                    </form>
+                </div>
             </div>
         </section>
-
     </main>
 
     <footer>
@@ -150,47 +911,99 @@
             <div class="line-footer">
                 <div class="flex">
                     <div class="logo-footer">
-                        <img src="images/Logo Ivan Souza Dantas Advocacia (1).png" alt="logo-do-rodape" width="200px">
+                        <img src="images/Logo Ivan Souza Dantas Advocacia .png" alt="Logo" width="180">
                     </div>
                     <div class="btn-social">
                         <a href="https://wa.me/5511968112100" target="_blank"><button><i class="bi bi-whatsapp"></i></button></a>
-                        <a href="https://www.instagram.com/idantasadv?igsh=MTBhZGk4d2cwZjM0dQ%3D%3D&utm_" target=_blank><button><i class="bi bi-instagram"></i></button></a>
+                        <a href="https://www.instagram.com/idantasadv?igsh=MTBhZGk4d2cwZjM0dQ%3D%3D&utm_" target="_blank"><button><i class="bi bi-instagram"></i></button></a>
                     </div>
                 </div>
             </div>
             <div class="line-footer borda">
-                <p><i class="bi bi-whatsapp"></i>11 96811-2100</p>
-                <p><i class="bi bi-envelope-fill"></i> <a href="mailto: ivan_advogado@hotmail.com"> ivan_advogado@hotmail.com</a></p>              
+                <p><i class="bi bi-whatsapp"></i> 11 96811-2100</p>
+                <p><i class="bi bi-envelope-fill"></i> <a href="mailto:ivan_advogado@hotmail.com">ivan_advogado@hotmail.com</a></p>
             </div>
-        </div> 
-
-        <!-- seu conteúdo -->
-
-    <script>
-    function enviarWhatsApp() {
-
-        var nome = document.getElementById("nome").value;
-        var mensagem = document.getElementById("mensagem").value;
-
-        var numero = "5511968112100";
-
-        var texto = "Olá, meu nome é " + nome + ".%0A%0AMensagem: " + mensagem;
-
-        var url = "https://wa.me/" + numero + "?text=" + texto;
-
-        window.open(url, "_blank");
-    }
-    </script>
-
-</body>
-
-        <script src="script.js"></script>
+        </div>
     </footer>
 
+    <!-- Botão voltar ao topo -->
+    <button class="back-to-top" id="backToTop" title="Voltar ao topo">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <script>
+        // ========== MENU MOBILE ==========
+        const hamburger = document.getElementById('hamburger');
+        const menuMobile = document.getElementById('menuMobile');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            menuMobile.classList.toggle('active');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                menuMobile.classList.remove('active');
+            });
+        });
+
+        // ========== HEADER SCROLL EFFECT ==========
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // ========== BOTÃO VOLTAR AO TOPO ==========
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 600) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ========== ANIMAÇÃO DE ENTRADA COM INTERSECTION OBSERVER ==========
+        const faders = document.querySelectorAll('.fade-in');
+        const appearOptions = {
+            threshold: 0.2,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('appear');
+                observer.unobserve(entry.target);
+            });
+        }, appearOptions);
+
+        faders.forEach(fader => {
+            appearOnScroll.observe(fader);
+        });
+
+        // ========== ENVIO WHATSAPP ==========
+        function enviarWhatsApp() {
+            var nome = document.getElementById("nome").value;
+            var mensagem = document.getElementById("mensagem").value;
+            var numero = "5511968112100";
+            var texto = "Olá, meu nome é " + encodeURIComponent(nome) + ".\n\nMensagem: " + encodeURIComponent(mensagem);
+            var url = "https://wa.me/" + numero + "?text=" + texto;
+            window.open(url, "_blank");
+        }
+    </script>
 </body>
 </html>
-
-
 
 
 
